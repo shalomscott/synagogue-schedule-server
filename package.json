@@ -2,6 +2,9 @@
 	"name": "schedule-server",
 	"version": "1.0.0",
 	"author": "Shalom Steinbach",
+	"scripts": {
+		"start": "node server.js"
+	},
 	"dependencies": {
 		"express": "^4.15.3",
 		"jsep": "^0.3.0",
