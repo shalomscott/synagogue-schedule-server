@@ -137,7 +137,11 @@ const timeOps = {
 	'+': (lval, rval) =>
 	{
 		const { time, offset } = orderTimeAndOffset(lval, rval);
-		return moment(time, 'H:m').add(offset, 'm').format('H:m');
+		return moment(time, 'H:mm').add(offset, 'm').format('H:mm');
+	},
+	'-': (lval, rval) => 
+	{
+		return moment(lval, 'H:mm').subtract(rval, 'm').format('H:mm');
 	}
 	// TODO: make more operations
 }
