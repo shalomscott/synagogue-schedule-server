@@ -1,0 +1,69 @@
+{
+	"static":
+	{
+		"erev_early_mincha": {"type": "expr", "val": "lighting-80"},
+		"erev_mincha": {"type": "expr", "val": "lighting+10"},
+		"shkiah": {"type": "expr", "val": "lighting+22"},
+		"shacharit": ["6:30", "8:00", "8:30"],
+		"mincha_gedola": ["13:15", "13:40"],
+		"mincha_ketana": [
+			{"type": "expr", "val": "tzeit_shabbat-85"},
+			{"type": "expr", "val": "tzeit_shabbat-60"}
+		],
+		"shiur": {"type": "expr", "val": "tzeit_shabbat-40"}
+	},
+
+	"29/07/17": {
+		"parsha": "דברים (חזון)",
+		"lighting": "19:21",
+		"tzeit_shabbat": "20:19"
+	},
+
+	"5/08/17": {
+		"parsha": "ואתחנן (נחמו)",
+		"lighting": "19:15",
+		"tzeit_shabbat": "20:13"
+	},
+
+	"12/08/17": {
+		"parsha": "עקב",
+		"lighting": "19:09",
+		"tzeit_shabbat": "20:05"
+	},
+
+	"19/08/17": {
+		"parsha": "ראה",
+		"lighting": "19:01",
+		"tzeit_shabbat": "19:57"
+	},
+
+	"26/08/17": {
+		"parsha": "שופטים",
+		"lighting": "18:53",
+		"tzeit_shabbat": "19:49"
+	},
+
+	"2/09/17": {
+		"parsha": "כי תצא",
+		"lighting": "18:45",
+		"tzeit_shabbat": "19:40"
+	},
+
+	"9/09/17": {
+		"parsha": "כי תבוא",
+		"lighting": "18:36",
+		"tzeit_shabbat": "19:30"
+	},
+
+	"16/09/17": {
+		"parsha": "נצבים וילך",
+		"lighting": "18:27",
+		"tzeit_shabbat": "19:21"
+	},
+
+	"23/09/17": {
+		"parsha": "האזינו (שובה)",
+		"lighting": "18:17",
+		"tzeit_shabbat": "19:11"
+	}
+}

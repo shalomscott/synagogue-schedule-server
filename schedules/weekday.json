@@ -1,0 +1,61 @@
+{
+	"metadata": {
+		"title": "Weekday Minyanim"
+	},
+
+	"static": {
+		"shacharit": {
+			"type": "week",
+			"val": {
+				"sun": ["5:45", "6:30", "7:30", "8:15"],
+				"fri": ["5:50", "7:00", "7:45", "8:30"]
+			}
+		},
+		"arvit": [{"type": "expr", "val": "mincha+30"}, "21:00"]
+	},
+
+	"29/07/17": {
+		"mincha": "19:35",
+		"sof_zman_kriat_shema": "9:18"
+	},
+
+	"5/08/17": {
+		"mincha": "19:30",
+		"sof_zman_kriat_shema": "9:20"
+	},
+
+	"12/08/17": {
+		"mincha": "19:24",
+		"sof_zman_kriat_shema": "9:22"
+	},
+
+	"19/08/17": {
+		"mincha": "19:17",
+		"sof_zman_kriat_shema": "9:24"
+	},
+
+	"26/08/17": {
+		"mincha": "19:09",
+		"sof_zman_kriat_shema": "9:25"
+	},
+
+	"2/09/17": {
+		"mincha": "19:00",
+		"sof_zman_kriat_shema": "9:26"
+	},
+
+	"9/09/17": {
+		"mincha": "18:52",
+		"sof_zman_kriat_shema": "9:27"
+	},
+
+	"16/09/17": {
+		"mincha": "18:42",
+		"sof_zman_kriat_shema": "9:28"
+	},
+
+	"23/09/17": {
+		"mincha": "18:33",
+		"sof_zman_kriat_shema": "9:29"
+	}
+}
