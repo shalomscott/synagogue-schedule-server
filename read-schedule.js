@@ -12,9 +12,10 @@ function read(filepath, date)
 	filepath = resolveFilepath(filepath);
 
 	const schedule = require(filepath);
-	const entry = getEntry(schedule, date);
+	const rawEntry = getRawEntry(schedule, date);
+	const items = parseEntryItems(rawEntry, date);
 
-	return { meta: schedule.meta, data: entry };
+	return { metadata: schedule.metadata, items };
 }
 
 function resolveFilepath(filepath)
@@ -23,13 +24,13 @@ function resolveFilepath(filepath)
 	return path.resolve(path.dirname(module.parent.filename), filepath);
 }
 
-function getEntry(schedule, date)
+function getRawEntry(schedule, date)
 {
 	for (const entry in schedule)
 	{
 		const entryDate = moment(entry, 'D/M/YY', true);
 		if (entryDate.isValid() && isDateWithinWeek(date, entryDate))
-			return parseEntry(Object.assign({}, schedule.static, schedule[entry]), date);
+			return Object.assign({}, schedule.static, schedule[entry]);
 	}
 	// return parseEntry(schedule.static); // Not sure if I want this
 }
@@ -37,16 +38,21 @@ function getEntry(schedule, date)
 // Function expects moment instances
 function isDateWithinWeek(date, compareDate)
 {
-	const diff = date.diff(compareDate, 'w', true);
-	return (diff > -0.14285 && diff < 1);
+	const diff = compareDate.diff(date, 'w', true);
+	return (diff < 1 && diff > -0.14285);
 }
 
-function parseEntry(rawEntry, date)
+function parseEntryItems(rawEntry, date)
 {
-	const parsedEntry = {};
-	for (const item in rawEntry)
-		parsedEntry[item] = parseEntryItem(rawEntry[item], rawEntry, date);
-	return parsedEntry;
+	const items = [];
+	for (const key in rawEntry)
+	{
+		items.push({
+			name: key,
+			values: ensureIsArray(parseEntryItem(rawEntry[key], rawEntry, date))
+		});
+	}
+	return items;
 }
 
 // Parameter "date" is expected to be an instance of moment
@@ -151,4 +157,11 @@ function orderTimeAndOffset(lval, rval)
 	if (moment(lval, 'H:m').isValid())
 		return { time: lval, offset: rval };
 	return { time: rval, offset: lval }
+}
+
+function ensureIsArray(value)
+{
+	if (value.constructor !== Array)
+		return [value];
+	return value;
 }
